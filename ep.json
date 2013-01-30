@@ -1,0 +1,10 @@
+{
+    "parts": [
+        {
+            "name": "ep_remove_embed",
+            "client_hooks":{
+                "aceInitialized": "ep_remove_embed/static/js/rembed:rembedFn"
+            }
+        }
+    ]
+}

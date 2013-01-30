@@ -1,0 +1,21 @@
+{
+  "name": "ep_themes",
+  "version": "0.0.5",
+  "description": "Change the themes, styles & colors of different parts of Etherpad Lite",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "dependencies": {},
+  "readmeFilename": "README.md",
+  "readme": "# Change the styling of a pad by passing a theme or styles in the URL as paramters\n\n# Available Themes:\n\n* hack\n\n* blackAndWhite\n\nAvailable Params\n```\ntheme     = Name of the theme IE hack or blackAndWhite\nfont      = Pad font color\nbg        = Pad Background Color \ntoolbar   = Toolbar Background color\nsidebar   = Sidebar font color\nsidebarBg = Sidebar Background color\n```\n\n# USAGE\nTo use add the params to your Pad URL IE\n\n?theme=blackAndWhite\n\nhttp://beta.etherpad.org/p/test?theme=blackAndWhite\n\n![Alt text](http://i.imgur.com/ktoSFGh.png)\n\n# CONTRIBUTING\nSee themes.js, use github.\n\n# INSTALL\nInstall via the /admin/plugins UI in Etherpad Lite.\n\n# TODO\n\n* In UI setting to change Styles\n* EP Setting to set a theme by default\n* Use Cookies to save style settings\n",
+  "_id": "ep_themes@0.0.5",
+  "dist": {
+    "shasum": "82b6a0ca850136cdd34ee359f2ca13899bd4328f"
+  },
+  "_from": "ep_themes"
+}
