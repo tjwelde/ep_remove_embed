@@ -2,9 +2,10 @@
     "parts": [
         {
             "name": "ep_remove_embed",
-            "client_hooks":{
-                "aceInitialized": "ep_remove_embed/static/js/rembed:rembedFn"
-            }
+            "hooks": {
+        		"eejsBlock_editbarMenuRight": "ep_remove_embed/index",
+        		"eejsBlock_embedPopup": "ep_remove_embed/index"
+      		}
         }
     ]
 }
