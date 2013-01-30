@@ -1,35 +1,28 @@
 
 var eejs = require('ep_etherpad-lite/node/eejs/');
-
+var jsdom = require('ep_etherpad-lite/node_modules/jsdom');
 
 exports.eejsBlock_editbarMenuRight = function (hook_name, args, cb) {
 	
-	var jsdom = require('ep_etherpad-lite/node_modules/jsdom-nocontextifiy');
-	
-	
-	var str = args.content;
-	/*
 	jsdom.env({
-		  html: str,
+		  html: args.content,
 		  scripts: [
-		    'http://code.jquery.com/jquery-1.5.min.js'
+		    'http://code.jquery.com/jquery-1.7.min.js'
 		  ]
 		}, function (err, window) {
-		  var $ = window.jQuery;
-
-		  $('#embed').remove();
-		});*/
+		  var $ = window.$;
 	
-	jsdom.env(
-			  "http://nodejs.org/dist/",
-			  ["http://code.jquery.com/jquery.js"],
-			  function (errors, window) {
-			    console.log("there have been", window.$("a").length, "nodejs releases!");
-			  }
-			);
+		  $('li[data-key="embed"]').remove();
+		  $('#settingslink').removeClass('grouped-left');
+		  
+		  args.content = $('body').html();
+		  
+		  window.close();
+	});
 	
-	args.content = str;
-  return cb();
+	// TODO This gets called, before jsdom is finshed
+	return cb();
+	
 };
 
 exports.eejsBlock_embedPopup = function (hook_name, args, cb) {
