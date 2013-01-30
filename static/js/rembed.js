@@ -4,72 +4,22 @@ exports.rembedFn = function(hook, context){
     var exports = {};
   }
 
-  exports.themes = {
+  exports.embedTools = {
     init: function() {
-      var themes    = exports.themes;
-      var theme     = themes.getUrlVars()['theme'];
-      var font      = themes.getUrlVars()['font'];
-      var bg        = themes.getUrlVars()['bg'];
-      var toolbar   = themes.getUrlVars()['toolbar'];
-      var sidebar   = themes.getUrlVars()['sidebar'];
-      var sidebarBg = themes.getUrlVars()['sidebarBg'];
+      var embedTools    = exports.embedTools;
+      //var rembed     = embedTools.getUrlVars()['rembed'];
 
-      /* Themes config -- add more themes here*/
-      if(theme){
-        if(theme == "hack"){
-          themes.setBgColor("#000");
-          themes.setFontColor("#07C201");
-          themes.setToolbarColor("#000");
-          themes.setSideBarBgColor("#000");
-          themes.setSideBarFontColor("#07C201");
-        }
-        if(theme == "blackAndWhite"){
-          themes.setBgColor("#000");
-          themes.setFontColor("#FFF");
-          themes.setToolbarColor("#000");
-          themes.setSideBarBgColor("#000");
-          themes.setSideBarFontColor("#FFF");
-        }
+      rembed = true;
+      
+      if(rembed){
+    	  embedTools.removeEmbed();
       }
-
-      if(font){
-        themes.setFontColor(font);
-      }
-      if(bg){
-        themes.setBgColor(bg);
-      }
-      if(toolbar){
-        themes.setToolbarColor(toolbar);
-      }
-      if(sidebar){
-        themes.setSideBarBgColor(sidebar);
-      }
-      if(sidebarBg){
-        themes.setSideBarFontColor(sidebarBg);
-      }
-
     },
 
-    setBgColor: function(color){
-      $('iframe.[name="ace_outer"]').contents().find("#outerdocbody").css("background-color",color);
-    },
-
-    setFontColor: function(color){
-      $('iframe.[name="ace_outer"]').contents().find('iframe').contents().find("#innerdocbody").css("color",color);
-    },
-
-    setToolbarColor: function(color){
-      $('.toolbar').css("background",color);
-      $('.toolbar').css("background-color",color);
-    },
-
-    setSideBarBgColor: function(color){
-      $('iframe.[name="ace_outer"]').contents().find('#sidediv').css("background",color);
-      $('iframe.[name="ace_outer"]').contents().find('#sidediv').css("background-color",color);
-    },
-
-    setSideBarFontColor: function(color){
-      $('iframe.[name="ace_outer"]').contents().find('#sidedivinner').attr('style', 'color: '+color +' !important');
+    removeEmbed: function(){
+      $('li.[data-key="embed"]').remove();
+      $('#embed.popup').remove();
+      $('#settingslink').removeClass('grouped-left');
     },
 
   
@@ -84,7 +34,7 @@ exports.rembedFn = function(hook, context){
         vars[hash[0]] = hash[1];
       }
       return vars;
-    }
-  }
-  exports.themes.init();
-}
+    },
+  };
+  exports.embedTools.init();
+};
