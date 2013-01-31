@@ -6,8 +6,10 @@ exports.eejsBlock_editbarMenuRight = function (hook_name, args, cb) {
 	
 	removeEmbed(args.content, function(html_out) {
 		args.content = html_out;
-		return cb();
 	});
+	
+	// This has to be done, AFTER removeEmbed is completed
+	return cb();
 };
 
 
