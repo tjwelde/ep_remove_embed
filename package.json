@@ -4,11 +4,10 @@
   "description": "Remove the embedlink",
   "author": {
     "name": "Timo Welde",
-    "email": "tjwelde@gmail.com",
-    "url": ""
+    "email": "tjwelde@gmail.com"
   },
   "engines": {
-    "node": ">= 0.6.0"
+    "node": ">= 0.8.14"
   },
   "dependencies": {},
   "readmeFilename": "README.md",
