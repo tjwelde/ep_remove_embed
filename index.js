@@ -4,8 +4,16 @@ var jsdom = require('ep_etherpad-lite/node_modules/jsdom');
 
 exports.eejsBlock_editbarMenuRight = function (hook_name, args, cb) {
 	
+	removeEmbed(args.content, function(html_out) {
+		args.content = html_out;
+		return cb();
+	});
+};
+
+
+function removeEmbed(html_in, callback) {
 	jsdom.env({
-		  html: args.content,
+		  html: html_in,
 		  scripts: [
 		    'http://code.jquery.com/jquery-1.7.min.js'
 		  ]
@@ -15,15 +23,12 @@ exports.eejsBlock_editbarMenuRight = function (hook_name, args, cb) {
 		  $('li[data-key="embed"]').remove();
 		  $('#settingslink').removeClass('grouped-left');
 		  
-		  args.content = $('body').html();
+		  callback($('body').html());
 		  
 		  window.close();
 	});
-	
-	// TODO This gets called, before jsdom is finshed
-	return cb();
-	
-};
+}
+
 
 exports.eejsBlock_embedPopup = function (hook_name, args, cb) {
 	args.content = "Embeding is disabled ";
