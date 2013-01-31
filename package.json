@@ -11,10 +11,6 @@
   },
   "dependencies": {},
   "readmeFilename": "README.md",
-  "readme": "",
   "_id": "ep_remove_embed@0.0.1",
-  "dist": {
-    "shasum": "82b6a0ca850136cdd34ee359f2ca13899bd4328f"
-  },
   "_from": "ep_remove_embed"
 }
