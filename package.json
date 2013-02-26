@@ -1,13 +1,13 @@
 {
   "name": "ep_remove_embed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Remove the embedlink",
   "author": {
     "name": "Timo Welde",
     "email": "tjwelde@gmail.com"
   },
   "engines": {
-    "node": ">= 0.8.14"
+    "node": ">= 0.6.12"
   },
   "dependencies": {},
   "repository": {
@@ -15,6 +15,6 @@
     "url": "git://github.com/goldquest/ep_remove_embed.git"
   },
   "readmeFilename": "README.md",
-  "_id": "ep_remove_embed@0.0.1",
+  "_id": "ep_remove_embed@0.0.2",
   "_from": "ep_remove_embed"
 }
