@@ -3,7 +3,6 @@
         {
             "name": "ep_remove_embed",
             "hooks": {
-        		"eejsBlock_editbarMenuRight": "ep_remove_embed/index",
         		"eejsBlock_embedPopup": "ep_remove_embed/index"
       		}
         }
